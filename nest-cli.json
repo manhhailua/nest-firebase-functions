@@ -1,4 +1,30 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/nest-firebase-functions/src",
+  "monorepo": true,
+  "root": "apps/nest-firebase-functions",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/nest-firebase-functions/tsconfig.app.json"
+  },
+  "projects": {
+    "nest-firebase-functions": {
+      "type": "application",
+      "root": "apps/nest-firebase-functions",
+      "entryFile": "main",
+      "sourceRoot": "apps/nest-firebase-functions/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest-firebase-functions/tsconfig.app.json"
+      }
+    },
+    "hello-world": {
+      "type": "application",
+      "root": "apps/hello-world",
+      "entryFile": "main",
+      "sourceRoot": "apps/hello-world/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/hello-world/tsconfig.app.json"
+      }
+    }
+  }
 }
